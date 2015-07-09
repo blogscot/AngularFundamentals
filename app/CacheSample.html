@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <title>Samples</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <script src=""></script>
+  <link rel="stylesheet" href="css/app.css">
+  <style>
+    .container:nth-child(2) {
+      margin-top: 30px;
+    }
+    input {
+      margin-bottom: 20px;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Angular Boot Camp</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="EventDetails.html">Event Details</a></li>
+          <li><a href="NewEvent.html">Create Event</a></li>
+          <li><a href="EditProfile.html">Edit Profile</a></li>
+          <li><a href="CacheSample.html">Samples</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div ng-controller="CookieStoreSampleController">
+      <h2>$CookieStore Example</h2>
+
+      <button class="btn-default" ng-click="saveEventToCookie(event)">Store</button>
+      <button class="btn-default" ng-click="getEventFromCookie()">Get</button>
+      <button class="btn-default" ng-click="removeEventCookie(event)">Remove</button>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div ng-controller="FilterSampleController">
+      <h2>$Filter Example</h2>
+
+      Duration 1: {{data.duration1}}<br>
+      Duration 2: {{data.duration2}}<br>
+      Duration 3: {{data.duration3}}<br>
+      Duration 4: {{data.duration4}}<br>
+    </div>
+  </div>
+
+  <div class="container">
+    <div ng-controller="TimeoutSampleController">
+      <h2>$Timeout Example</h2>
+      <p>Name: {{name}}</p>
+      <button class="btn btn-primary" ng-click="cancel()">Cancel</button>
+      <br><br>
+      <input type="text" ng-model="foo" />
+    </div>
+  </div>
+
+  <div class="container">
+    <div ng-controller="LocaleSampleController">
+      <h2>$Locale Example</h2>
+      <p>{{ myDate | date:myFormat }}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div ng-controller="ParseSampleController">
+      <h2>$Parse Example</h2>
+      <p>Output is shown in console</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div ng-controller="CompileSampleController">
+
+      <h2>$Compile Example</h2>
+
+      <div id="appendHere"></div>
+      <br>
+      Name: <br><input type="text" ng-model="name" /> <br>
+      Markup: <br><input type="text" ng-model="markup" /> <br>
+      <button type="button" class="btn btn-primary" ng-click="appendDivToElement(markup)">Append</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div ng-controller="CacheSampleController">
+
+      <h2>$Cache Example</h2>
+      
+      Key: <br><input type="text" ng-model="key" /> <br>
+      Value: <br><input type="text" ng-model="value" /> <br>
+      <button type="button" class="btn btn-primary" ng-click="addToCache(key, value)">Add To Cache</button>
+      <br><br>
+      Key: <br><input type="text" ng-model="keyToRead" /><br>
+      <p>Value from cache: {{readFromCache(keyToRead)}}</p>
+      <p>Cache Stats: {{getCacheStats()}}</p>
+
+    </div>
+  </div>
+
+  <script src="bower_components/jQuery/dist/jquery.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-resource.min.js"></script>
+  <script src="lib/angular/angular-cookies.min.js"></script>
+  <script src="lib/angular/angular-locale_es-es.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/CacheSampleController.js"></script>
+  <script src="js/controllers/CompileSampleController.js"></script>
+  <script src="js/controllers/ParseSampleController.js"></script>
+  <script src="js/controllers/LocaleSampleController.js"></script>
+  <script src="js/controllers/TimeoutSampleController.js"></script>
+  <script src="js/controllers/FilterSampleController.js"></script>
+  <script src="js/controllers/CookieStoreSampleController.js"></script>
+  <script src="js/services/ExceptionHandler.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

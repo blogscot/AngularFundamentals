@@ -1,0 +1,62 @@
+<div class="container">
+  <img ng-src="{{event.imageUrl}}" alt="{{event.name}}">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{ event.name | uppercase }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+     <strong>Date: </strong>{{ event.date }}
+     <strong>Time: </strong>{{ event.time }}
+   </div>
+   <div class="col-sm-6">
+    <address>
+      <strong>Address:</strong><br>
+      {{ event.location.address }}<br>
+      {{ event.location.city }},
+      {{ event.location.state }}
+    </address>
+  </div>
+</div>
+<hr>
+<h3>Sessions</h3>
+<span>Order By:</span>
+<select ng-model="sortOrder" class="input-small">
+  <option selected value="name">Name</option>
+  <option value="-upVoteCount">Votes</option>
+</select>
+<span>Choose Level:</span>
+<select ng-model="query.level" class="input-medium">
+  <option selected value="">All</option>
+  <option value="Introductory">Introductory</option>
+  <option value="Intermediate">Intermediate</option>
+  <option value="Advanced">Advanced</option>
+</select>
+<ul class="event-details thumbnails">
+  <li ng-repeat="session in event.sessions | orderBy:sortOrder | filter:query" id="session{{session.id}}">
+    <div class="well col-sm-1 votingWidget">
+      <div class="votingButton" ng-click="upVoteSession(session)">
+        <i class="glyphicon glyphicon-chevron-up icon-white"></i>
+      </div>
+      <div class="badge badge-inverse">
+        <div>{{session.upVoteCount}}</div>
+      </div>
+      <div class="votingButton" ng-click="downVoteSession(session)">
+        <span class="glyphicon glyphicon-chevron-down icon-white"></span>
+      </div>
+    </div>
+    <div class="row session">
+      <div class="well col-sm-9 session-details">
+        <h3>{{session.name}}</h4>
+          <h5><strong>Speaker: </strong>{{session.creatorName}}</h5>
+          <h5><strong>Duration: </strong>{{session.duration | durations }}</h5>
+          <h5><strong>Level: </strong>{{session.level}}</h5>
+          <h5><strong>Abstract: </strong></h5>
+          <p>{{session.abstract}}</p>
+        </div>
+      </div>
+      <!-- <div>{{session | json}}</div> -->
+    </li>
+  </ul>
+</div>

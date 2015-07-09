@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>New Event</h1>
+  <hr>
+  <form name="newEventForm" action="">
+    <fieldset>
+      <label for="eventName">Event Name</label> <br>
+      <input id="eventName" type="text" ng-model="event.name" required placeholder="Event name"> <br>
+      <label for="eventDate">Event Date</label> <br>
+      <input id="eventDate" type="text" ng-model="event.date"  required ng-pattern="/^[\d]{2}\/[\d]{2}\/[\d]{4}$/"placeholder="format (dd/mm/yyyy)"> <br>
+      <label for="eventTime">Event Time</label> <br>
+      <input id="eventTime" type="text" ng-model="event.time" placeholder="Start and end time"> <br>
+      <label for="eventLocation">Event Location</label> <br>
+      <input id="eventLocation" type="text" ng-model="event.location.address" placeholder="Event Address"> <br>
+      <input id="eventCity" type="text" class="input-small" ng-model="event.location.city" placeholder="City">
+      <input id="eventState" type="text" class="input-small" ng-model="event.location.state" placeholder="State"> <br>
+      <label for="eventImageUrl">Image:</label> <br>
+      <input id="eventImageUrl" type="url" class="input-xlarge" ng-model="event.imageUrl" placeholder="Image URL"> <br>
+    </fieldset>
+
+    <img ng-src="{{event.imageUrl}}" alt="">
+    <br>
+    <button type="submit" ng-click="saveEvent(event, newEventForm)" ng-disabled="newEventForm.$invalid" class="btn btn-primary">Save</button>
+    <button type="button" ng-click="cancelEdit()" class="btn btn-default">Cancel</button>
+  </form>
+  {{ event | json }}
+</div>

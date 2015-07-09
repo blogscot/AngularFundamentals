@@ -1,0 +1,126 @@
+/* app css stylesheet */
+
+body {
+  background: #1A8B46;
+  color: #ddd;
+}
+
+img:first-child {
+  width: 100%;
+  margin: 20px 0 5px;
+}
+
+.hoverwell:hover {
+  background-color: #52575c;
+  cursor: pointer;
+}
+select, textarea {
+  color: #52575c;
+}
+
+.well-title {
+  margin-top: 0px;
+}
+
+.session {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #000;
+}
+
+ul.thumbnails {
+  list-style-type: none;
+  margin-top: 15px;
+}
+
+/* Common well styles, see widgets styles */
+
+li .well {
+  background: #2F6579;
+  color: #ddd;
+}
+
+ul.event-details li .well {
+  margin-right: 30px;
+}
+
+div.session-details {
+  padding: 0 15px;
+}
+
+select + span {
+  margin-left: 20px;
+}
+
+.votingWidget {
+  padding: 0px;
+  height: 65px;
+  min-width: 44px;
+  width: 4%;
+  right: 15px;
+}
+
+.votingButton {
+  text-align: center;
+  width: 40%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+
+/* Bootstrap */
+
+.navbar.navbar-static-top {
+  background-color: #004D29;
+  border-color: #080808;
+  background-image: initial;  /* Note, Bootstrap uses a background image! */
+}
+
+
+.badge {
+  padding: 5px;
+  width: 100%;
+  background-color: initial;
+}
+
+/* NewEvent.html Styles */
+
+form input[id*="event"] {
+  margin-bottom: 10px;
+  border: 2px solid #005500;
+  color: black;
+}
+
+form input[id*="event"].ng-invalid.ng-dirty {
+  background-color: lightpink;
+  border-color: red;
+}
+
+input#eventLocation,
+input#eventImageUrl {
+  min-width: 360px;
+}
+
+input#eventCity {
+  margin-right: 8px;
+}
+
+/* EventList.html Styles */
+
+ul.event-list li .well {
+  min-height: 140px;
+  padding-top: 0;
+  margin-right: 30px;
+}
+
+ul.event-list li .well:hover {
+  background-color: rgba(47, 101, 121, 0.63);
+}
+
+ul.event-list li .row {
+  margin-left: 0;
+}
