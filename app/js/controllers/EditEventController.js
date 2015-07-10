@@ -16,6 +16,6 @@ eventsApp.controller('EditEventController',
 
       $scope.cancelEdit = function() {
         // redirect to home page
-        window.location = "EventDetails.html";
+        window.location = "index.html";
       };
 });
