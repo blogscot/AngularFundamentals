@@ -1,8 +1,8 @@
 'use strict';
-/*global eventsApp,window,alert*/
+/*global eventsApp,window,console*/
 
 eventsApp.controller('EditEventController',
-    function EditEventController($scope, eventData, $log) {
+    function EditEventController($scope, eventData, $location) {
 
       $scope.saveEvent = function(event, newEventForm) {
         if (newEventForm.$valid) {
@@ -16,6 +16,6 @@ eventsApp.controller('EditEventController',
 
       $scope.cancelEdit = function() {
         // redirect to home page
-        window.location = "index.html";
+        $location.url('/');
       };
 });

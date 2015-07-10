@@ -11,6 +11,10 @@ var eventsApp = angular.module('eventsApp', ['ngResource', 'ngRoute'])
     {
       templateUrl: '/templates/NewEvent.html',
       controller: 'EditEventController'
+    }).when('/editProfile',
+    {
+      templateUrl: '/templates/EditProfile.html',
+      controller: 'EditProfileController'
     }).when('/events',
     {
       templateUrl: '/templates/EventList.html',
