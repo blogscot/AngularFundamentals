@@ -38,12 +38,14 @@
     <voting-widget upvote="upVoteSession(session)" downvote="downVoteSession(session)" count="session.upVoteCount"></voting-widget>
     <div class="row session">
       <div class="well col-sm-9 session-details">
-        <h3>{{session.name}}</h4>
+        <collapsable title="{{session.name}}">
+        <!-- <h3>{{session.name}}</h3> -->
           <h5><strong>Speaker: </strong>{{session.creatorName}}</h5>
           <h5><strong>Duration: </strong>{{session.duration | durations }}</h5>
           <h5><strong>Level: </strong>{{session.level}}</h5>
           <h5><strong>Abstract: </strong></h5>
           <p>{{session.abstract}}</p>
+        </collapsable>
         </div>
       </div>
       <!-- <div>{{session | json}}</div> -->
