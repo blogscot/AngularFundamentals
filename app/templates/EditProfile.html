@@ -2,13 +2,12 @@
   <form name="profileForm">
     <div class="row-fluid">
       <div class="col-sm-3">
-        <gravatar email="{{user.emailAddress)}}"></gravatar>
-        <!-- <img ng-src="{{getGravatarUrl(user.emailAddress)}}" alt=""> -->
+        <gravatar email="{{user.emailAddress}}"></gravatar>
       </div>
       <div class="col-sm-3">
         <fieldset>
           <label for="userName">User Name:</label><br>
-          <input focus id="userName" required ng-pattern="/^[-A-Za-z0-9]{2,20}$/" type="text" placeholder="Username" ng-model="user.userName"><br> 
+          <input focus id="userName" required ng-pattern="/^[-A-Za-z0-9]{2,20}$/" type="text" placeholder="Username" ng-model="user.userName"><br>
           <label for="password">Password:</label><br>
           <input id="password" required type="password" placeholder="Password" ng-model="user.password"><br>
         </fieldset>
