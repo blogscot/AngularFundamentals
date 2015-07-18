@@ -1,4 +1,5 @@
 'use strict';
+/*globals sinon*/
 
 describe('EventListController', function() {
   var scope, $controllerConstructor, mockEventData;
@@ -11,7 +12,7 @@ describe('EventListController', function() {
     $controllerConstructor = $controller;
   }));
 
-  it('should stuff', function() {
+  it('should set the scope events to the results of eventData.getAllEvents', function() {
     var mockEvents = {};
     mockEventData.getAllEvents.returns(mockEvents);
 
@@ -19,5 +20,16 @@ describe('EventListController', function() {
         {$scope: scope, $location: {}, eventData: mockEventData});
 
     expect(scope.events).toBe(mockEvents);
+  });
+
+  it('should navigate to the correct url when navigateToDetails is called', function() {
+    var mocklocation = sinon.stub({url: function() {}});
+    var ctrl = $controllerConstructor("EventListController",
+        {$scope: scope, $location: mocklocation, eventData: mockEventData});
+    var event = {id: 23};
+
+    scope.navigateToDetails(event);
+
+    expect(mocklocation.url.calledWith('/event/23')).toBe(true);
   });
 });

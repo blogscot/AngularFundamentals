@@ -1,9 +1,11 @@
 'use strict';
 /*globals eventsApp*/
 
-eventsApp.controller('EventListController', 
+eventsApp.controller('EventListController',
   function EventListController($scope, $location, eventData) {
     $scope.events = eventData.getAllEvents();
 
-    console.log($scope.events);
+    $scope.navigateToDetails = function(event) {
+      $location.url('/event/' + event.id);
+    };
   });
